@@ -134,6 +134,13 @@ def criar_usuario(clientes):
     clientes.popitem()
     return
   
+  bairro = input("Digite o bairro: ")
+  
+  if not bairro.isalpha():
+    print("Bairro inválido")
+    clientes.popitem()
+    return
+  
   cidade = input("Digite a cidade: ")
   
   if not cidade.isalpha():
@@ -148,7 +155,7 @@ def criar_usuario(clientes):
     clientes.popitem()
     return
   
-  endereco = f"{logradouro}, {numero} - {cidade}/{estado}"
+  endereco = f"{logradouro}, {numero} - {bairro} - {cidade}/{estado}"
   
   clientes[cpf]["Endereço"] = endereco
   
